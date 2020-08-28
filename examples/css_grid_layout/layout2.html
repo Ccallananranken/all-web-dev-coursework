@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Example 2</title>
+    <style>
+      html {
+        font: 100% arial, helvetica, sans-serif;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+      }
+      .sidebar {
+        background: silver;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .sidebar > * {
+        display: block;
+        background: grey;
+        margin-bottom: 1rem;
+      }
+      .logo {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+      }
+      .content > * {
+        display: block;
+        background: grey;
+        margin-bottom: 1rem;
+      }
+      .content header {
+        padding: 0.5rem;
+      }
+      .content h1 {
+        margin: 0;
+      }
+      .spotlight {
+        width: 100%;
+        height: auto;
+      }
+      .product {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+      }
+      .content footer {
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+      }
+
+      @media only screen and (min-width: 600px) {
+        body {
+          display: flex;
+          flex-direction: row;
+        }
+        .sidebar {
+          align-self: stretch;
+          flex-grow: 1;
+          max-width: 400px;
+        }
+        .content {
+          align-self: start;
+          flex-grow: 3;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, auto);
+          grid-template-areas: 
+            'title title title'
+            'spot spot spot'
+            'product1 product2 product3'
+            'foot foot foot';
+          gap: 1rem;
+          align-items: start;
+          justify-items: center;
+        }
+        .content > * {
+          margin: 0;
+        }
+        .content header {
+          justify-self: stretch;
+          grid-area: title;
+        }
+        .content .spotlight {
+          grid-area: spot;
+        }
+        .content .product:nth-child(1) {
+          grid-area: product1;
+        }
+        .content .product:nth-child(2) {
+          grid-area: product2;
+        }
+        .content .product:nth-child(3) {
+          grid-area: product3;
+        }
+        .content footer {
+          justify-self: stretch;
+          grid-area: foot;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar">
+      <img class="logo" src="images/logo.jpg" alt="Company Logo" />
+      <div>Item 1</div>
+      <div>Item 2</div>
+      <div>Item 3</div>
+      <div>Item 4</div>
+    </nav>
+
+    <div class="content">
+      <header>
+        <h1>Title</h1>
+      </header>
+
+      <img class="spotlight" src="images/spotlight2.jpg" alt="Main Image" />
+      <img class="product" src="images/product1.jpg" alt="Product 1" />
+      <img class="product" src="images/product2.jpg" alt="Product 2" />
+      <img class="product" src="images/product3.jpg" alt="Product 3" />
+
+      <footer>
+        <span>Copyright Notice</span>
+      </footer>
+    </div>
+  </body>
+</html>
