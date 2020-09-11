@@ -1,0 +1,60 @@
+.wrapper {
+    
+    padding-right: 10%;
+    padding-left: 10%;
+    text-align: center;
+}
+
+/* spotlight image*/
+body {
+    background: image-set("../../4-6 test/images/koenigsegg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+nav {
+    border: black;
+    border-width: bold;
+    border-style: bold;
+}
+
+#spotlight{
+    margin: 0;
+    padding: 10px;
+    height: 300px;
+    width: 100%;
+}
+
+#leftcolumn {
+    float: left;
+    margin: 0;
+    padding: 5px;
+    width: 30%;
+}
+
+#middlecolumn{
+    float: left;
+    margin: 0;
+    padding: 5px;
+    width: 30%;
+}
+
+#rightcolumn {
+    float: right;
+    margin: 0;
+    padding: 5px;
+    width: 30%;
+}
+
+
+
+
+footer {
+    position:fixed;
+    bottom:0px;
+    height:auto;
+    width:80%;
+    background-color: white;
+    
+ }
