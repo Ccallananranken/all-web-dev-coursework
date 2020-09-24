@@ -1,0 +1,54 @@
+
+
+ul {
+    list-style: none; 
+    display: flex;
+}
+
+li {
+    padding-right: 10px;
+}
+
+.bar {
+    border: 1px;
+    border-style: solid;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 30%;
+}
+
+.right {
+    width: 70%;
+}
+
+.spilt {
+    width: 25%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+
+
+/*	Footer	*/
+#main-footer {
+	text-align: center;
+    padding: 20px;
+    float: none;
+}
+
+body {
+    background-color: pink;
+}
+
